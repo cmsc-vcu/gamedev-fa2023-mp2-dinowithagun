@@ -161,7 +161,7 @@
                     "path": "<Mouse>/position",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard+Mouse",
                     "action": "MousePosition",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -214,7 +214,7 @@
                 },
                 {
                     "devicePath": "<Mouse>",
-                    "isOptional": false,
+                    "isOptional": true,
                     "isOR": false
                 }
             ]
