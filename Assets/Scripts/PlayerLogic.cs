@@ -7,7 +7,7 @@ public class PlayerLogic : MonoBehaviour
 {
     private Transform player;
     private NTCloneInput _input;
-    private Vector2 move;
+    public Vector2 move;
     public int PlayerHealth = 5;
 
     // Start is called before the first frame update
