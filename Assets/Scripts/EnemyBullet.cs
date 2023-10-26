@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class EnemyBullet : MonoBehaviour
 {
     public float speed = 12.0f;
     public float angle = 0;
@@ -23,13 +23,13 @@ public class Bullet : MonoBehaviour
         transform.Translate((transform.up * speed) * Time.deltaTime, Space.World);
         if(transform.position.magnitude >= 40)
         { 
-            Destroy(this.gameObject);
+            //Destroy(this.gameObject);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             Destroy(this.gameObject);
         }

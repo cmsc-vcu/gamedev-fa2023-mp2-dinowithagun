@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8776229796866598200}
   - component: {fileID: 7176668545170122111}
-  - component: {fileID: 7088394535955092815}
   - component: {fileID: -4505004344945337105}
+  - component: {fileID: 1838096411660272911}
   m_Layer: 0
-  m_Name: bulletPrefab
-  m_TagString: Bullet
+  m_Name: enemyBulletPrefab
+  m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,23 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7088394535955092815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7642483207828789328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d0b2c2a4a15eb249bbfbb7ba0fa2040, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  angle: 0
-  forward: {x: 0, y: 0, z: 0}
-  right: {x: 0, y: 0, z: 0}
-  up: {x: 0, y: 0, z: 0}
 --- !u!60 &-4505004344945337105
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -151,3 +134,20 @@ PolygonCollider2D:
       - {x: -0.5, y: -0.28866667}
       - {x: 0.5, y: -0.28866667}
   m_UseDelaunayMesh: 0
+--- !u!114 &1838096411660272911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7642483207828789328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71310545529915543987a717f1c793ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 12
+  angle: 0
+  forward: {x: 0, y: 0, z: 0}
+  right: {x: 0, y: 0, z: 0}
+  up: {x: 0, y: 0, z: 0}

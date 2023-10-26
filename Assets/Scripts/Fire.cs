@@ -11,6 +11,7 @@ public class Fire : MonoBehaviour
     private PlayerInput m_CloneInput;
     private InputAction m_FireAction;
     private float cooldown;
+    public int PlayerHealth = 5;
 
     // Start is called before the first frame update
     void Start()
@@ -27,17 +28,10 @@ public class Fire : MonoBehaviour
         if(m_FireAction.ReadValue<float>().Equals(1) && cooldown <= 0)
         {
             float shotVariance = Random.Range(-90 - shotSpread, -90 + shotSpread);
-            GameObject bullet = Instantiate(bulletPrefab, gun.position, (gun.rotation * Quaternion.Euler(0, 0, shotVariance)));
+            Vector3 shotPosition = gun.position + 0.25f * gun.right;
+            GameObject bullet = Instantiate(bulletPrefab, shotPosition, (gun.rotation * Quaternion.Euler(0, 0, shotVariance)));
             cooldown = 0.4f;
         }
 
     }
-
-    /**private void OnFire(InputValue value)
-    {
-        if (m_FireAction.triggered)
-        {
-            GameObject bullet = Instantiate(bulletPrefab, gun.position, (gun.rotation * Quaternion.Euler(0, 0, -90)));
-        }
-    }*/
 }
