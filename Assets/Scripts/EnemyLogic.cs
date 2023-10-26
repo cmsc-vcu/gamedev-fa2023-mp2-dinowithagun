@@ -14,8 +14,8 @@ public class EnemyLogic : MonoBehaviour
     public float actionCooldownLength = 3f;
     private float actionCooldown;
     private Vector3 originalPosition;
-    private enum EnemyActions {None, Walk}
-    private EnemyActions action = EnemyActions.None;
+    public enum EnemyActions {None, Walk}
+    public EnemyActions action = EnemyActions.None;
     private Vector2 walkDirection = Vector2.zero;
 
     public float shotCooldownLength = 0.25f;
