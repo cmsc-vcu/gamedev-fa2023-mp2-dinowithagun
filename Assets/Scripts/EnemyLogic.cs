@@ -18,8 +18,8 @@ public class EnemyLogic : MonoBehaviour
     private EnemyActions action = EnemyActions.None;
     private Vector2 walkDirection = Vector2.zero;
 
-    public float shotCooldownLength = 0.5f;
-    public float shotSpread = 10.0f;
+    public float shotCooldownLength = 0.25f;
+    public float shotSpread = 20.0f;
     private float shotCooldown;
 
     private Transform player;
@@ -69,17 +69,17 @@ public class EnemyLogic : MonoBehaviour
             actionCooldown -= Time.deltaTime;
         }
 
-        /**if (shotCooldown <= 0)
+        if (shotCooldown <= 0)
         {
             Vector3 targetDirection = (player.position - transform.position).normalized;
 
             float shotVariance = UnityEngine.Random.Range(-shotSpread, shotSpread);
             Vector3 shotPosition = transform.position + targetDirection;
-            Debug.Log(Quaternion.Euler(targetDirection));
-            GameObject bullet = Instantiate(bulletPrefab, shotPosition, (Quaternion.LookRotation(targetDirection, Vector3.forward)));
+           
+            GameObject bullet = Instantiate(bulletPrefab, shotPosition, (Quaternion.LookRotation(Vector3.forward, targetDirection)));
             shotCooldown = shotCooldownLength;
         }
-        shotCooldown -= Time.deltaTime;*/
+        shotCooldown -= Time.deltaTime;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

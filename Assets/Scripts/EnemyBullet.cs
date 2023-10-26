@@ -23,7 +23,7 @@ public class EnemyBullet : MonoBehaviour
         transform.Translate((transform.up * speed) * Time.deltaTime, Space.World);
         if(transform.position.magnitude >= 40)
         { 
-            //Destroy(this.gameObject);
+            Destroy(this.gameObject);
         }
     }
 
