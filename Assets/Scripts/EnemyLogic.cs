@@ -73,10 +73,10 @@ public class EnemyLogic : MonoBehaviour
         {
             Vector3 targetDirection = (player.position - transform.position).normalized;
 
-            float shotVariance = UnityEngine.Random.Range(-shotSpread, shotSpread);
+            float shotVariance = UnityEngine.Random.Range(-shotSpread + 90, shotSpread + 90);
             Vector3 shotPosition = transform.position + targetDirection;
            
-            GameObject bullet = Instantiate(bulletPrefab, shotPosition, (Quaternion.LookRotation(Vector3.forward, targetDirection)));
+            GameObject bullet = Instantiate(bulletPrefab, shotPosition, (Quaternion.LookRotation(Vector3.forward, targetDirection)) * Quaternion.Euler(0, 0, shotVariance));
             shotCooldown = shotCooldownLength;
         }
         shotCooldown -= Time.deltaTime;

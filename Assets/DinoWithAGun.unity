@@ -2185,8 +2185,10 @@ MonoBehaviour:
   walkSpeed: 3
   walkTime: 3
   actionCooldownLength: 3
+  action: 0
+  walkDirection: {x: 0, y: 0}
   shotCooldownLength: 2
-  shotSpread: 10
+  shotSpread: 25
   bulletPrefab: {fileID: 7642483207828789328, guid: 2d233cdc89861a2438d512dac1419237, type: 3}
 --- !u!1 &310313680
 GameObject:
@@ -7638,8 +7640,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38370d7784bf9a4b8b19290f5081d8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gun: {fileID: 1393716198}
   bulletPrefab: {fileID: 7642483207828789328, guid: 67bc75f0e04a60f4b95ffd3727a4dbff, type: 3}
   shotSpread: 10
+  m_CloneInput: {fileID: 956272452}
   PlayerHealth: 5
 --- !u!50 &956272454
 Rigidbody2D:
@@ -7680,8 +7684,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6720f2d25e41fb54f95fd7b69dafe18c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  move: {x: 0, y: 0}
   PlayerHealth: 5
-  animator: {fileID: 956272446}
 --- !u!1 &959645047
 GameObject:
   m_ObjectHideFlags: 0
