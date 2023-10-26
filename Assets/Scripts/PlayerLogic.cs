@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 public class PlayerLogic : MonoBehaviour
 {
     private Transform player;
-    private NTCloneInput _input;
     public Vector2 move;
     public int PlayerHealth = 5;
 
@@ -14,8 +13,6 @@ public class PlayerLogic : MonoBehaviour
     void Start()
     {
         player = this.transform;
-        _input = new NTCloneInput();
-        _input.Gameplay.Enable();
     }
 
     private void OnMove(InputValue value)

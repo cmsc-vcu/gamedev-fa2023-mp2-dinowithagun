@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class CursorControl : MonoBehaviour
 {
     private NTCloneInput _input;
-    private GameObject cursor;
+    public GameObject cursor;
     Vector2 _position;
     Vector2 setPosition;
     Camera _camera;
@@ -20,7 +20,6 @@ public class CursorControl : MonoBehaviour
         _player = this.transform;
         _playerInput = this.GetComponent<PlayerInput>();
         _input = new NTCloneInput();
-        cursor = GameObject.Find("Cursor");
         _camera = Camera.main;
         Cursor.visible = false;
      

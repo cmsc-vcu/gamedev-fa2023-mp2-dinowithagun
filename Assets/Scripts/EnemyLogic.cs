@@ -22,17 +22,22 @@ public class EnemyLogic : MonoBehaviour
     public float shotSpread = 20.0f;
     private float shotCooldown;
 
-    private Transform player;
+    private GameObject player;
     public GameObject bulletPrefab;
 
+    public GameObject pigSpawner;
+    private Spawner enemyTypeSpawner;
 
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.Find("Player");
+        enemyTypeSpawner = GameObject.Find("PigSpawner").GetComponent<Spawner>();
+
         originalPosition = transform.position;
         actionCooldown = actionCooldownLength;
         shotCooldown = shotCooldownLength;
-        player = GameObject.Find("Player").GetComponent<Transform>();
+        enemyTypeSpawner.enemyCount++;
     }
 
     // Update is called once per frame
@@ -71,7 +76,7 @@ public class EnemyLogic : MonoBehaviour
 
         if (shotCooldown <= 0)
         {
-            Vector3 targetDirection = (player.position - transform.position).normalized;
+            Vector3 targetDirection = (player.transform.position - transform.position).normalized;
 
             float shotVariance = UnityEngine.Random.Range(-shotSpread + 90, shotSpread + 90);
             Vector3 shotPosition = transform.position + targetDirection;
@@ -86,10 +91,14 @@ public class EnemyLogic : MonoBehaviour
     {
         if (collision.CompareTag("Bullet"))
         {
+            int prevHealth = EnemyHealth;
             EnemyHealth--;
-            if (EnemyHealth <= 0)
-            {
+            if (EnemyHealth <= 0) {
                 Debug.Log("This enemy is dead");
+                if (prevHealth > 0)
+                {
+                    enemyTypeSpawner.enemyCount--;
+                }
             }
         }
     }

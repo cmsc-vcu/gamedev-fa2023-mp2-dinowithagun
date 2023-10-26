@@ -4,21 +4,20 @@ using UnityEngine;
 
 public class cameraFollow : MonoBehaviour
 {
-    private GameObject cursor;
-    private GameObject player;
+    public Transform cursor;
+    public Transform player;
     private Vector2 cameraCenter;
 
     // Start is called before the first frame update
     void Start()
     {
-        cursor = GameObject.Find("Cursor");
-        player = GameObject.Find("Player");
+
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
-        cameraCenter = player.transform.position + ((cursor.transform.position - player.transform.position) * 0.25f);
-        this.transform.position = cameraCenter;
+        cameraCenter = player.position + ((cursor.position - player.position) * 0.25f);
+        transform.position = cameraCenter;
     }
 }

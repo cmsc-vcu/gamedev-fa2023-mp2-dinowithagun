@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class AimAt : MonoBehaviour
 {
-    private Transform target;
-    private Transform player;
+    public Transform target;
+    public Transform player;
     private Vector2 aimAt;
     private Vector2 oldAim;
     // Start is called before the first frame update
     void Start()
     {
-        target = GameObject.Find("Cursor").GetComponent<Transform>();
-        player = GameObject.Find("Player").GetComponent<Transform>();
         oldAim = Vector2.zero;
     }
 
