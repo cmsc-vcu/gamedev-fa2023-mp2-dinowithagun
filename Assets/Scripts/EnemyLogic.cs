@@ -16,7 +16,7 @@ public class EnemyLogic : MonoBehaviour
     private Vector3 originalPosition;
     public enum EnemyActions {None, Walk}
     public EnemyActions action = EnemyActions.None;
-    private Vector2 walkDirection = Vector2.zero;
+    public Vector2 walkDirection = Vector2.zero;
 
     public float shotCooldownLength = 0.25f;
     public float shotSpread = 20.0f;
