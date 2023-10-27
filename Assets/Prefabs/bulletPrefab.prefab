@@ -100,9 +100,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   angle: 0
-  forward: {x: 0, y: 0, z: 0}
-  right: {x: 0, y: 0, z: 0}
-  up: {x: 0, y: 0, z: 0}
 --- !u!60 &-4505004344945337105
 PolygonCollider2D:
   m_ObjectHideFlags: 0
