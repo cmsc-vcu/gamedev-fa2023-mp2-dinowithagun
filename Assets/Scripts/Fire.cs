@@ -12,14 +12,12 @@ public class Fire : MonoBehaviour
     private InputAction m_FireAction;
     private float cooldown;
     public int PlayerHealth = 5;
-    public AudioSource gunshot;
 
     // Start is called before the first frame update
     void Start()
     {
         m_FireAction = m_CloneInput.actions["Fire"];
         cooldown = 0;
-        gunshot = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -32,8 +30,6 @@ public class Fire : MonoBehaviour
             GameObject bullet = Instantiate(bulletPrefab, shotPosition, (gun.transform.rotation * Quaternion.Euler(0, 0, shotVariance)));
             cooldown = 0.4f;
         }
-
-        gunshot.Play();
 
     }
 }
