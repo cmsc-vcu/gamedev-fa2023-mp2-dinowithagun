@@ -7,7 +7,7 @@ public class Spawner : MonoBehaviour
     public GameObject EnemyPrefab;
     public float spawnCooldownMin = 10f;
     public float spawnCooldownMax = 15f;
-    public int maxEnemies = 6;
+    public int maxEnemies = 10;
     public int enemyCount;
     private float spawnCooldown;
 
