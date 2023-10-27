@@ -9,6 +9,7 @@ public class PlayerLogic : MonoBehaviour
     public Vector2 move;
     public int PlayerHealth = 5;
     public float moveSpeed = 5f;
+    public DeathScreen playerDied;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +35,7 @@ public class PlayerLogic : MonoBehaviour
             PlayerHealth--;
             if (PlayerHealth <= 0)
             {
-                Debug.Log("Player is dead");
+                playerDied.OnDeath();
             }
         }
     }
@@ -46,7 +47,7 @@ public class PlayerLogic : MonoBehaviour
             PlayerHealth--;
             if (PlayerHealth <= 0)
             {
-                Debug.Log("Player is dead");
+                playerDied.OnDeath();
             }
         }
     }
