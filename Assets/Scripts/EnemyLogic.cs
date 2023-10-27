@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class EnemyLogic : MonoBehaviour
 {
-    public int EnemyHealth = 5;
+    public int EnemyHealth = 3;
     public float walkSpeed = 3f;
     public float walkTime = 3f;
     private float walkingTimer;
@@ -18,7 +18,7 @@ public class EnemyLogic : MonoBehaviour
     public EnemyActions action = EnemyActions.None;
     public Vector2 walkDirection = Vector2.zero;
 
-    public float shotCooldownLength = 0.25f;
+    public float shotCooldownLength = 0.5f;
     public float shotSpread = 20.0f;
     private float shotCooldown;
     private Vector3 targetDirection;
@@ -52,7 +52,7 @@ public class EnemyLogic : MonoBehaviour
             if (walkDirection == Vector2.zero)
             {
                 Vector3 destination = Vector3.zero;
-                while (walkDirection == Vector2.zero || destination.magnitude >= 20)
+                while (walkDirection == Vector2.zero || destination.magnitude >= 45)
                 {
                     walkDirection = UnityEngine.Random.insideUnitCircle.normalized;
                     destination = (Vector2)transform.position + walkSpeed * walkTime * walkDirection;
@@ -102,10 +102,11 @@ public class EnemyLogic : MonoBehaviour
             int prevHealth = EnemyHealth;
             EnemyHealth--;
             if (EnemyHealth <= 0) {
-                Debug.Log("This enemy is dead");
                 if (prevHealth > 0)
                 {
                     enemyTypeSpawner.enemyCount--;
+                    Destroy(enemyGun);
+                    Destroy(gameObject);
                 }
             }
         }
