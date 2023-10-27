@@ -10562,7 +10562,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.02, y: -0.14, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -18927,6 +18927,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 956272443}
+    - target: {fileID: 5991331135164840393, guid: 9132c7141c38a6c4bb58ea0ed62808ed, type: 3}
+      propertyPath: enemyGun
+      value: 
+      objectReference: {fileID: 4022716730525746715, guid: 437d0713d3dbcbe46a562269ab1bf467, type: 3}
     - target: {fileID: 5991331135164840393, guid: 9132c7141c38a6c4bb58ea0ed62808ed, type: 3}
       propertyPath: enemyTypeSpawner
       value: 

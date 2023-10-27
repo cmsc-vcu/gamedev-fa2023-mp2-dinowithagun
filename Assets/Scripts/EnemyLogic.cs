@@ -21,12 +21,13 @@ public class EnemyLogic : MonoBehaviour
     public float shotCooldownLength = 0.25f;
     public float shotSpread = 20.0f;
     private float shotCooldown;
+    private Vector3 targetDirection;
 
     private GameObject player;
     public GameObject bulletPrefab;
-
-    public GameObject pigSpawner;
     private Spawner enemyTypeSpawner;
+    public GameObject enemyGun;
+    private SpriteRenderer gunRenderer;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +39,9 @@ public class EnemyLogic : MonoBehaviour
         actionCooldown = actionCooldownLength;
         shotCooldown = shotCooldownLength;
         enemyTypeSpawner.enemyCount++;
+        enemyGun = Instantiate(enemyGun);
+        enemyGun.transform.position = transform.position + new Vector3(1,0,0);
+        gunRenderer = enemyGun.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -74,10 +78,9 @@ public class EnemyLogic : MonoBehaviour
             actionCooldown -= Time.deltaTime;
         }
 
-        if (shotCooldown <= 0)
-        {
-            Vector3 targetDirection = (player.transform.position - transform.position).normalized;
+        targetDirection = (player.transform.position - transform.position).normalized;
 
+        if (shotCooldown <= 0) {
             float shotVariance = UnityEngine.Random.Range(-shotSpread + 90, shotSpread + 90);
             Vector3 shotPosition = transform.position + targetDirection;
            
@@ -85,6 +88,11 @@ public class EnemyLogic : MonoBehaviour
             shotCooldown = shotCooldownLength;
         }
         shotCooldown -= Time.deltaTime;
+
+        enemyGun.transform.position = transform.position + targetDirection;
+        enemyGun.transform.right = targetDirection;
+        if ((enemyGun.transform.position - transform.position).x < 0) gunRenderer.flipY = true;
+        else gunRenderer.flipY = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

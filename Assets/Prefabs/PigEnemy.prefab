@@ -192,3 +192,4 @@ MonoBehaviour:
   shotCooldownLength: 2
   shotSpread: 25
   bulletPrefab: {fileID: 7642483207828789328, guid: 2d233cdc89861a2438d512dac1419237, type: 3}
+  enemyGun: {fileID: 4022716730525746715, guid: 437d0713d3dbcbe46a562269ab1bf467, type: 3}
