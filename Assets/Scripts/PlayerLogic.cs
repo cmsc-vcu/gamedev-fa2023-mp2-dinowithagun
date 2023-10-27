@@ -8,6 +8,7 @@ public class PlayerLogic : MonoBehaviour
     private Transform player;
     public Vector2 move;
     public int PlayerHealth = 5;
+    public float moveSpeed = 5f;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,7 @@ public class PlayerLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        player.position += (Vector3)move * 0.1f;
+        player.position += (Vector3)move * Time.deltaTime * moveSpeed;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
